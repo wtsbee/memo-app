@@ -9,6 +9,7 @@ class FoldersController < ApplicationController
       respond_to do |format|
         format.html
         format.json
+      end
     else
       render :index
     end
