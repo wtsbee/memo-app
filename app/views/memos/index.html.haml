@@ -1,0 +1,10 @@
+.memo-container
+  = form_with url: folder_memos_path(folder_id: @folder_id), local: true, class: 'memo-save-form' do |f|
+    = f.text_field :name, class: 'memo-input-box', placeholder: '新しいメモ名を入力してください'
+    = f.submit '作成', class: 'memo-save-btn'
+  .memo-content
+    %ul.memo-list
+      - @memos.each do |memo|
+        %li.memo-item
+          = link_to folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
+            #{memo.name}

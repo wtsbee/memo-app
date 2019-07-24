@@ -1,0 +1,33 @@
+.memo-container {
+  @include centering;
+  width: 700px;
+  margin-bottom: 50px;
+  .memo-save-form {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    padding: 15px 0;
+    .memo-input-box {
+      width: 100%;
+      margin-right: 10px;
+      padding: 0 0 0 10px;
+    }
+    .memo-save-btn {
+      width: 100px;
+      background-color: $blue;
+      padding: 0 30px;
+      color: $white;
+      text-align: center;
+      cursor: pointer;
+    }
+
+  }
+  .memo-content {
+    padding: 10px;
+    background-color: $white;
+    min-height: 100px;
+    .memo-item {
+      margin-bottom: 10px;
+    }
+  }
+}
