@@ -1,24 +1,26 @@
-# README
+# usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|text|null: false, unique: true|
+|password|string|null: false|
+## Association
+- has_many :folders, dependent: :destroy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# foldersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, length: { maximum: 30 } unique: true|
+|user_id|references|null: false, foreign_key: true|
+## Association
+- has_many :memos, dependent: :destroy
+- belongs_to :user
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# memosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, length: { maximum: 30 }|
+|content|string||
+|image|string||
+|folder_id|references|null: false, foreign_key: true|
+## Association
+- belongs_to :folder
