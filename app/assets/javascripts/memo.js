@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   function buildHTML(memo){
     var html = `<li class="memo-item">
                   <a href=/folders/${memo.folder_id}/memos/${memo.id}>${memo.name}</a>
