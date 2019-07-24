@@ -1,0 +1,32 @@
+.header {
+  @include clearfix;
+  background-color: $white;
+  border-bottom: 1px solid #D8D8D8;
+  &-inner {
+    @include centering;
+    width: 100%;
+    max-width: 700px;
+    &--left {
+      float: left;
+      font-size: 20px;
+      span {
+        line-height: 60px;
+      }
+    }
+    &--right {
+      width: 120px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      float: right;
+      text-align: center;
+      border-radius: 5px;
+      border: 2px solid $blue;
+      cursor: pointer;
+      .logout-btn {
+        display: block;
+        line-height: 40px;
+        color: $blue;
+      }
+    }
+  }
+}

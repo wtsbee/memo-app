@@ -1,0 +1,16 @@
+%header.header
+  .header-inner
+    %h1.header-inner--left
+      %span MEMO APP
+    .header-inner--right
+      -if user_signed_in?
+        =link_to destroy_user_session_path, {method: :delete, class: 'logout-btn'} do
+          ログアウト
+      -else
+        %ul
+          %li.list-item
+            =link_to new_user_registration_path, {class: 'sign-up-btn'} do
+              新規登録
+          %li.list-item
+            =link_to new_user_session_path, {class: 'sign-in-btn'} do
+              ログイン
