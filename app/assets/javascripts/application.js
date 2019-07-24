@@ -14,3 +14,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+$(function(){
+  $('.inline-attachment').inlineattachment({
+    urlText: '<img src="{filename}">',
+    uploadUrl: "/upload/image",
+    uploadFieldName: "asset[file]",
+    allowedTypes: ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'],
+    extraHeaders: {"X-CSRF-Token": $("meta[name=csrf-token]").attr("content")}
+  });
+});
