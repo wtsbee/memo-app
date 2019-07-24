@@ -1,0 +1,33 @@
+.folder-container {
+  @include centering;
+  width: 700px;
+  margin-bottom: 50px;
+  .folder-save-form {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    padding: 15px 0;
+    .folder-input-box {
+      width: 100%;
+      margin-right: 10px;
+      padding: 0 0 0 10px;
+    }
+    .folder-save-btn {
+      width: 100px;
+      background-color: $blue;
+      padding: 0 30px;
+      color: $white;
+      text-align: center;
+      cursor: pointer;
+    }
+
+  }
+  .folder-content {
+    padding: 10px;
+    background-color: $white;
+    min-height: 100px;
+    .folder-item {
+      margin-bottom: 10px;
+    }
+  }
+}

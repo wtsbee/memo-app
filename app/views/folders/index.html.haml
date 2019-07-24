@@ -1,0 +1,10 @@
+.folder-container
+  = form_with url: folders_path, local: true, class: 'folder-save-form' do |f|
+    = f.text_field :name, class: 'folder-input-box', placeholder: '新しいフォルダ名を入力してください'
+    = f.submit '作成', class: 'folder-save-btn'
+  .folder-content
+    - @folders.each do |folder|
+      %ul.folder-list
+        %li.folder-item
+          = link_to folder_memos_path(folder.id) do
+            #{folder.name}
