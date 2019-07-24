@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(folder){
     var html = `<li class="folder-item">
-                  <a href=/folders/${folder.name}/memos>${folder.name}</a>
+                  <a href=/folders/${folder.id}/memos>${folder.name}</a>
                 </li>`
     return html;
   }
