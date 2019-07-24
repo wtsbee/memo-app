@@ -1,4 +1,4 @@
-.memo-container
+.memo-lists-container
   = form_with url: folder_memos_path(folder_id: @folder_id), local: true, class: 'memo-save-form' do |f|
     = f.text_field :name, class: 'memo-input-box', placeholder: '新しいメモ名を入力してください'
     = f.submit '作成', class: 'memo-save-btn'
