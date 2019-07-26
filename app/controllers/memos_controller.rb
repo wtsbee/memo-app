@@ -7,17 +7,6 @@ class MemosController < ApplicationController
   end
 
   def show
-    # binding.pry
-    # @memo = Memo.new(memo_params)
-    # if @memo.save
-    #   respond_to do |format|
-    #     format.html
-    #     format.json
-    #   end
-    # else
-    #   binding.pry
-    #   render :index
-    # end
   end
 
   def create
@@ -33,14 +22,11 @@ class MemosController < ApplicationController
   end
 
   def edit
-    # binding.pry
     gon.content = @memo.content
   end
   
   def update
-    # binding.pry
     @memo.update(memo_update_params)
-    # binding.pry
     redirect_to folder_memo_path(id: @memo.id, folder_id: @memo.folder.id)
   end
 
