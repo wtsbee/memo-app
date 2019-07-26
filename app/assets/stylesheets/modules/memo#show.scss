@@ -1,0 +1,26 @@
+.memo-show-container {
+  @include centering;
+  width: 700px;
+  margin-bottom: 50px;
+  .memo-show-btn {
+    display: block;
+    width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: $white;
+    background-color: $blue;
+    border: 2px solid $blue;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+  .memo-show-content {
+    min-height: 400px;
+    padding: 20px;
+    background-color: $white;
+    font-size:86%;
+    word-wrap: break-word;
+    border: 1px solid #d1d1d1;
+  }
+}
