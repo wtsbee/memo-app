@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_080315) do
+ActiveRecord::Schema.define(version: 2019_07_25_102754) do
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_080315) do
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "content"
+    t.text "content", limit: 16777215
     t.string "image"
     t.integer "folder_id", null: false
     t.datetime "created_at", null: false
