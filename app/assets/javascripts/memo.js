@@ -25,4 +25,11 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     })
   })
+
+  $('.memo-edit-btn').on('click', function(){
+    // $('iframe').contents().find('.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders p').remove();
+    $('iframe').contents().find('.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders').append(gon.content);
+    // $('iframe').contents().find('.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders p').css('margin', '0');
+    $('iframe').contents().find('.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders br:first').remove();
+  })
 });
