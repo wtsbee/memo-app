@@ -5,6 +5,11 @@
   .memo-content
     %ul.memo-list
       - @memos.each do |memo|
-        %li.memo-item
-          = link_to folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
-            #{memo.name}
+        - if memo.content.present? || memo.image.present?
+          %li.memo-item
+            = link_to folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
+              #{memo.name}
+        - else
+          %li.memo-item
+            = link_to edit_folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
+              #{memo.name}
