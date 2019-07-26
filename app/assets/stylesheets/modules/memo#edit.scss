@@ -1,0 +1,34 @@
+.memo-edit-container {
+  @include centering;
+  width: 700px;
+  margin-bottom: 50px;
+  .memo-edit-btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: $white;
+    background-color: $blue;
+    border: 2px solid $blue;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+  .memo-edit-save-form {
+    .memo-edit-save-btn {
+      @include centering;
+      display: block;
+      width: 100px;
+      background-color: #0099F8;
+      margin-top: 5px;
+      padding: 0 30px;
+      color: #FFFFFF;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+// .cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders {
+//   p {
+//     margin: 0;
+//   }
+// }
