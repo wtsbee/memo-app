@@ -5,6 +5,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
+  config.height = '38vh';
   config.extraPlugins = 'youtube';
 	config.youtube_privacy = true;
   // config.toolbarCanCollapse = true;
@@ -47,32 +48,22 @@ CKEDITOR.editorConfig = function( config )
   // Toolbar groups configuration.
   config.toolbar = [
     { name: 'insert', items: [ 'Youtube'] },
-    { name: 'insert', items: [ 'Html5video'] },
-    { name: 'clipboard', items: [ 'SelectAll', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-    { name: 'editing', items: [ 'Find', '-','SpellChecker', 'Scayt', 'AutoCorrect' ] },
-    { name: 'tools', items: [ 'Maximize', 'ShowBlocks', 'Zoom' ] },
+    { name: 'editing', items: [ 'Find' ] },
+    { name: 'tools', items: [ 'Maximize', 'Zoom' ] },
     '/', // 強制改行
     { name: 'insert', items: [ 'Image' ] },
-    { name: 'links', items: [ 'lightbox', 'Link', 'Unlink', 'Anchor' ] },
     { name: 'insert', items: [ 'Slideshow','Youtube','-','leaflet','Iframe' ] },
     { name: 'insert', items : [ 'Smiley','Glyphicons','FontAwesome','Symbol' ] },
-    { name: 'insert', items: [ 'Table', 'HorizontalRule', 'CreateDiv', 'CodeSnippet', 'Code' ] },
     '/', // 強制改行
-    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] },
-    { name: 'paragraph', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
-    '/', // 強制改行
-    { name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+    { name: 'forms', items : [ 'Checkbox', 'Radio', 'TextField', 'Textarea' ] },
     { name: 'document', items: [ 'Templates' ] },
-    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize','lineheight' ] },
-    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
     { name: 'about', items: [ 'About' ] },
 
-    // { name: 'insert', items: [ 'Image', 'Youtube' ] },
     { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source'] },
     { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
     // { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+    // { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
     { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar' ] },
     { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
     '/',
