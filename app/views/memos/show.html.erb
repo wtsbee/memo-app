@@ -1,7 +1,7 @@
+<%- breadcrumb :show_memos, @memo, @folder %>
+<%= render partial: 'layouts/breadcrumbs' %>
+
 <div class="memo-show-container">
-  <%# <button class="memo-show-btn">
-    編集
-  </button> %>
    <%= link_to '編集', "/folders/#{@memo.folder_id}/memos/#{@memo.id}/edit", method: :get, class: "memo-show-btn" %>
   <div class="memo-show-content">
     <%== @memo.content %>

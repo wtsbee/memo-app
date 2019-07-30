@@ -1,3 +1,6 @@
+- breadcrumb :edit_memos, @memo, @folder
+= render partial: 'layouts/breadcrumbs'
+
 .memo-edit-container
   %button.memo-edit-btn データの読込
   = form_with url: folder_memo_path(folder_id: @memo.folder.id, id: @memo.id),method: :patch, local: true, class: 'memo-edit-save-form' do |f|

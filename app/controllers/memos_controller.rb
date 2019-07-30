@@ -1,9 +1,10 @@
 class MemosController < ApplicationController
   before_action :set_memo, only: [:index]
   before_action :set_edit_memo, only: [:edit, :update, :show]
-  before_action :set_folder, only: [:index, :create]
+  before_action :set_folder, only: [:index, :create, :show]
 
   def index
+    @memo = @memos.first
   end
 
   def show
@@ -22,6 +23,7 @@ class MemosController < ApplicationController
   end
 
   def edit
+    @folder = Folder.find(@memo.folder_id)
     gon.content = @memo.content
   end
   
@@ -53,5 +55,6 @@ class MemosController < ApplicationController
 
   def set_folder
     @folder_id = params.permit(:folder_id)[:folder_id]
+    @folder = Folder.find(@folder_id)
   end
 end

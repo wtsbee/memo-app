@@ -1,5 +1,30 @@
+# Root crumb
 crumb :root do
-  link "Home", root_path
+  link 'HOME', root_path
+end
+
+# memos#index
+crumb :memos do |memo,folder|
+  if memo.present?
+    link memo.folder.name, folder_memos_path(id: memo.folder.id)
+    parent :root
+  else
+    link folder.name, folder_memos_path(id: folder.id)
+    parent :root
+  end
+end
+
+# memos#edit
+crumb :edit_memos do |memo, folder|
+  link memo.name, folder_memo_path(id: memo.id, folder_id: memo.folder_id)
+  parent :memos, memo, folder
+end
+
+# memos#show
+crumb :show_memos do |memo, folder|
+  # binding.pry
+  link memo.name, folder_memo_path(id: memo.id, folder_id: memo.folder_id)
+  parent :memos, memo, folder
 end
 
 # crumb :projects do
