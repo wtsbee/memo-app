@@ -5,10 +5,12 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
+  // config.extraPlugins = 'html5video';
+  config.extraPlugins = 'html5video,youtube';
   config.skin = 'moonocolor';
   // config.uiColor = '#f8f8f8';
   config.height = '50vh';
-  config.extraPlugins = 'youtube';
+  // config.extraPlugins = 'youtube';
 	config.youtube_privacy = true;
   // config.toolbarCanCollapse = true;
   // config.plugins = 'youtube';
@@ -54,7 +56,7 @@ CKEDITOR.editorConfig = function( config )
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
     // { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
     // { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-    { name: 'insert', items: [ 'Image', 'Youtube', 'Table', 'HorizontalRule', 'SpecialChar', 'Smiley' ] },
+    { name: 'insert', items: [ 'Image', 'Youtube', 'Html5video', 'Table', 'HorizontalRule', 'SpecialChar', 'Smiley' ] },
     '/', // 強制改行
     { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
     { name: 'forms', items : [ 'Checkbox', 'Radio', 'TextField', 'Textarea' ] },
