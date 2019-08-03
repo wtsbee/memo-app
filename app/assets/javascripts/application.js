@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require ckeditor/init
+//= require ckeditor/plugins/divarea/plugin
 //= require ckeditor/plugins/html5video/plugin
 //= require ckeditor/plugins/youtube/plugin
 //= require ckeditor/config
