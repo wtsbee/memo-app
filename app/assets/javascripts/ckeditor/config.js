@@ -6,7 +6,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 CKEDITOR.editorConfig = function( config )
 {
   // config.extraPlugins = 'html5video';
-  config.extraPlugins = 'divarea,html5video,youtube';
+  config.extraPlugins = 'html5video,youtube';
   config.skin = 'moonocolor';
   // config.uiColor = '#f8f8f8';
   config.height = '50vh';
