@@ -1,0 +1,6 @@
+- breadcrumb :show_memos, @memo, @folder
+= render partial: 'layouts/breadcrumbs'
+.memo-show-container
+  = link_to '編集', "/folders/#{@memo.folder_id}/memos/#{@memo.id}/edit", method: :get, class: "memo-show-btn"
+  .memo-show-content
+    != @memo.content
