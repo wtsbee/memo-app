@@ -14,18 +14,19 @@
       }
     }
     &--right {
-      width: 120px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      @include clearfix;
       float: right;
-      text-align: center;
-      border-radius: 5px;
-      border: 2px solid $blue;
-      cursor: pointer;
       .logout-btn {
-        display: block;
-        line-height: 40px;
-        color: $blue;
+        @include user-btn;
+      }
+      .sign-in-btn {
+        @include user-btn;
+        margin-right: 10px;
+        float: left;
+      }
+      .sign-up-btn {
+        @include user-btn;
+        float: right;
       }
     }
   }
