@@ -1,7 +1,7 @@
 .header {
   @include clearfix;
   background-color: $white;
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid $gray;
   &-inner {
     @include centering;
     width: 100%;
