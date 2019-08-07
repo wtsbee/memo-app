@@ -23,11 +23,17 @@
 
   }
   .folder-content {
-    padding: 10px;
+    padding: 20px;
     background-color: $white;
     min-height: 100px;
+    border: 1px solid $gray;
     .folder-item {
       margin-bottom: 10px;
+      margin-left: 20px;
+      list-style: disc;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

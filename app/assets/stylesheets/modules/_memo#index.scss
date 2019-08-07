@@ -23,11 +23,17 @@
 
   }
   .memo-content {
-    padding: 10px;
+    padding: 20px;
     background-color: $white;
     min-height: 100px;
+    border: 1px solid $gray;
     .memo-item {
       margin-bottom: 10px;
+      margin-left: 20px;
+      list-style: circle;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
