@@ -24,6 +24,10 @@ $(document).on('turbolinks:load', function() {
     .fail(function(){
       alert('error');
     })
+    .always(function(data){
+      $('.memo-save-btn').prop('disabled', false);
+      $('.memo-save-form')[0].reset();
+    })
   })
 
   $('.memo-edit-btn').on('click', function(){

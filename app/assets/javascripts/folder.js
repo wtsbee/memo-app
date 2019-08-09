@@ -24,5 +24,9 @@ $(document).on('turbolinks:load', function() {
     .fail(function(){
       alert('error');
     })
+    .always(function(data){
+      $('.folder-save-btn').prop('disabled', false);
+      $('.folder-save-form')[0].reset();
+    })
   })
 });
