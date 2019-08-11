@@ -23,16 +23,39 @@
 
   }
   .folder-content {
-    padding: 20px;
     background-color: $white;
     min-height: 100px;
     border: 1px solid $gray;
-    .folder-item {
-      margin-bottom: 10px;
-      margin-left: 20px;
-      list-style: disc;
-      &:last-child {
-        margin-bottom: 0;
+    table {
+      width: 100%;
+      tr {
+        th {
+          height: 34px;
+          padding-left: 10px;
+          background-color: #EEFFFF	;
+          border-bottom: 1px solid $gray;
+          &:first-child {
+            width: 75%;
+            border-right: 1px solid $gray;
+          }
+          a {
+            color: black;
+          }
+        }
+        td {
+          height: 34px;
+          padding-left: 10px;
+          &:first-child {
+            width: 75%;
+            border-right: 1px solid $gray;
+          }
+          a {
+            color: black;
+          }
+        }
+        &:nth-child(odd) {
+          background-color: #EEEEEE;
+        }
       }
     }
   }

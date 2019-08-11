@@ -5,8 +5,16 @@
     = f.text_field :name, class: 'folder-input-box', placeholder: '新しいフォルダ名を入力してください'
     = f.submit '作成', class: 'folder-save-btn'
   .folder-content
-    %ul.folder-list
+    %table
+      %tr
+        %th
+          = sortable "name", "フォルダ名"
+        %th
+          = sortable "updated_at", "更新日時"
       - @folders.each do |folder|
-        %li.folder-item
-          = link_to folder_memos_path(folder.id) do
-            #{folder.name}
+        %tr
+          %td
+            = link_to folder_memos_path(folder.id) do
+              #{folder.name.truncate(33)}
+          %td
+            #{folder.updated_at.strftime("%Y-%m-%d %H:%M")}
