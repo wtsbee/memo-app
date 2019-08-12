@@ -39,7 +39,7 @@
             border-right: 1px solid $gray;
           }
           a {
-            color: black;
+            color: $black;
           }
         }
         td {
@@ -48,9 +48,6 @@
           &:first-child {
             width: 75%;
             border-right: 1px solid $gray;
-          }
-          a {
-            color: black;
           }
         }
         &:nth-child(odd) {
