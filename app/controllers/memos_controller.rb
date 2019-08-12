@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_memo, only: [:index]
   before_action :set_edit_memo, only: [:edit, :update, :show]
   before_action :set_folder, only: [:index, :create, :show]
@@ -56,5 +57,13 @@ class MemosController < ApplicationController
   def set_folder
     @folder_id = params.permit(:folder_id)[:folder_id]
     @folder = Folder.find(@folder_id)
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def sort_column
+      Folder.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 end

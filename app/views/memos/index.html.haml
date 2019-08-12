@@ -6,13 +6,20 @@
     = f.text_field :name, class: 'memo-input-box', placeholder: '新しいメモ名を入力してください'
     = f.submit '作成', class: 'memo-save-btn'
   .memo-content
-    %ul.memo-list
+    %table
+      %tr
+        %th
+          = sortable "name", "メモ名"
+        %th
+          = sortable "updated_at", "更新日時"
       - @memos.each do |memo|
-        - if memo.content.present? || memo.image.present?
-          %li.memo-item
-            = link_to folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
-              #{memo.name}
-        - else
-          %li.memo-item
-            = link_to edit_folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
-              #{memo.name}
+        %tr
+          %td
+            - if memo.content.present? || memo.image.present?
+              = link_to folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
+                #{memo.name.truncate(33)}
+            - else
+              = link_to edit_folder_memo_path(id: memo.id, folder_id: memo.folder_id) do
+                #{memo.name.truncate(33)}
+          %td
+            #{memo.updated_at.strftime("%Y-%m-%d %H:%M")}
