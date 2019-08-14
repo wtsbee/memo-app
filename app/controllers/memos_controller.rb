@@ -6,6 +6,11 @@ class MemosController < ApplicationController
 
   def index
     @memo = @memos.first
+    @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
