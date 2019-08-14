@@ -4,6 +4,11 @@
   background: $white;
   border-top: 1px solid #eeeeee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: fixed;
+  top: 65px;
+  right: 0;
+  left: 0;
+  z-index: 10;
   &__list {
     @include centering;
     width: 700px;
