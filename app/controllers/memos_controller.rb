@@ -7,6 +7,12 @@ class MemosController < ApplicationController
   def index
     @memo = @memos.first
     @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    @memos_3 = []
+    @memos_2.each do |memo|
+      if Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,"").include?(params[:keyword].to_s) && params[:keyword] != "" && memo.content != ""
+        @memos_3 << {id: memo.id, name:memo.name, content: Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,""), folder_id:memo.folder_id}
+      end
+    end
     respond_to do |format|
       format.html
       format.json

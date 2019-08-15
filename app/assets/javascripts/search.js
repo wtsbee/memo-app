@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function() {
     var html = `<span class="memo-item">
                   ${msg}
                 </span>`
-    return html;
+    $('#header-search-container').append(html);
   }
 
   $('#memo-search-field').on('keyup', function() {
@@ -29,14 +29,19 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data) {
       $("#header-search-container").empty();
-      if (data.length !== 0) {
+      if (data.length !== 0 && $('#memo-search-field').val().match(/^[ 　\r\n\t]*$/)) {
+        $('#header-search-container').show();
+        appendErrMsgToHTML("一致する情報がありません");
+      } else if (data.length !== 0) {
         $('#header-search-container').show();
         data.forEach(function(data){
           appendMemo(data);
         });
-      }
-      else {
+      } else if ($('#memo-search-field').val().length !== 0) {
+        $('#header-search-container').show();
         appendErrMsgToHTML("一致する情報がありません");
+      } else {
+        $('#header-search-container').hide();
       }
     })
     .fail(function() {
