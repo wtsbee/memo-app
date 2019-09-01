@@ -43,28 +43,4 @@ $(document).on('turbolinks:load', function() {
     $('iframe').contents().find('.cke_editable.cke_editable_themed.cke_contents_ltr.cke_show_borders br:first').remove();
   })
 
-  // $('#memo-search-field').on('keyup', function() {
-  //   var input = $('#memo-search-field').val();
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: location.href,
-  //     data: { keyword: input },
-  //     dataType: 'json'
-  //   })
-  //   .done(function(data) {
-  //     $("#header-search-container").empty();
-  //     if (data.length !== 0) {
-  //       $('#header-search-container').show();
-  //       data.forEach(function(data){
-  //         appendMemo(data);
-  //       });
-  //     }
-  //     else {
-  //       appendErrMsgToHTML("一致する情報がありません");
-  //     }
-  //   })
-  //   .fail(function() {
-  //     alert('error');
-  //   });
-  // });
 });
