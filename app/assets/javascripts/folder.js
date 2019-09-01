@@ -28,5 +28,10 @@ $(document).on('turbolinks:load', function() {
       $('.folder-save-btn').prop('disabled', false);
       $('.folder-save-form')[0].reset();
     })
-  })
+  });
+
+  $(document).ready(function(){
+    $(".current.asc").append(" ▲");
+    $(".current.desc").append(" ▼");
+  });
 });
