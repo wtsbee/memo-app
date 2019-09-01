@@ -10,25 +10,7 @@ $(document).on('turbolinks:load', function() {
                 </tr>`
     return html;
   }
-  // function appendMemo(memo){
-  //   var html = `<a href=/folders/${memo.folder_id}/memos/${memo.id}>
-  //                 <div class="memo-search-result">
-  //                   <div class="memo-search-result__title">
-  //                     ${memo.name}
-  //                   </div>
-  //                   <div class="memo-search-result__body">
-  //                     ${memo.content}
-  //                   </div>
-  //                 </div>
-  //               </a>`
-  //   $('#header-search-container').append(html);
-  // }
-  // function appendErrMsgToHTML(msg) {
-  //   var html = `<span class="memo-item">
-  //                 ${msg}
-  //               </span>`
-  //   return html;
-  // }
+
   $('.memo-save-form').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
