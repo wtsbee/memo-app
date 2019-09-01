@@ -23,3 +23,5 @@
                 #{memo.name.truncate(33)}
           %td
             #{memo.updated_at.strftime("%Y-%m-%d %H:%M")}
+  .folder-delete-form
+    = link_to "フォルダ削除", folder_path(id: @folder_id), {method: :delete, class: 'folder-delete-btn'}

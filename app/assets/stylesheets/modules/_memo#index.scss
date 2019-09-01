@@ -21,7 +21,6 @@
       text-align: center;
       cursor: pointer;
     }
-
   }
   .memo-content {
     background-color: $white;
@@ -55,6 +54,20 @@
           background-color: #EEEEEE;
         }
       }
+    }
+  }
+  .folder-delete-form {
+    .folder-delete-btn {
+      @include centering;
+      width: 158px;
+      height: 40px;
+      margin-top: 15px;
+      padding: 8px 30px;
+      background-color: #FF3333;
+      color: $white;
+      text-align: center;
+      cursor: pointer;
+      display: block;
     }
   }
 }

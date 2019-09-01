@@ -30,6 +30,12 @@ class FoldersController < ApplicationController
     end
   end
 
+  def destroy
+    folder = Folder.find(params[:id])
+    folder.destroy
+    redirect_to("/")
+  end
+
   private
   def folder_params
     params.permit(:name).merge(user_id: current_user.id)
