@@ -2,9 +2,10 @@
   .header-inner
     %h1.header-inner--left
       %span MEMO APP
-    .header-inner--search
-      %input#memo-search-field.input-form{placeholder: "メモ検索", type: "text"}
-      #header-search-container
+    -if user_signed_in?
+      .header-inner--search
+        %input#memo-search-field.input-form{placeholder: "メモ検索", type: "text"}
+        #header-search-container
     .header-inner--right
       -if user_signed_in?
         =link_to destroy_user_session_path, {method: :delete, class: 'logout-btn'} do
