@@ -26,4 +26,18 @@
     word-wrap: break-word;
     border: 1px solid #d1d1d1;
   }
+  .memo-delete-form {
+    .memo-delete-btn {
+      @include centering;
+      width: 158px;
+      height: 40px;
+      margin-top: 15px;
+      padding: 8px 30px;
+      background-color: #FF3333;
+      color: $white;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+    }
+  }
 }

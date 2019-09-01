@@ -4,3 +4,5 @@
   = link_to '編集', "/folders/#{@memo.folder_id}/memos/#{@memo.id}/edit", method: :get, class: "memo-show-btn"
   .memo-show-content
     != @memo.content
+  .memo-delete-form
+    = link_to "メモ削除", folder_memo_path(id: @memo.id, folder_id: @folder_id), {method: :delete, class: 'memo-delete-btn'}

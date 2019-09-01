@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_action :set_memo, only: [:index]
   before_action :set_edit_memo, only: [:edit, :update, :show]
-  before_action :set_folder, only: [:index, :create, :show]
+  before_action :set_folder, only: [:index, :create, :show, :destroy]
 
   def index
     @memo = @memos.first
@@ -64,6 +64,12 @@ class MemosController < ApplicationController
   def update
     @memo.update(memo_update_params)
     redirect_to folder_memo_path(id: @memo.id, folder_id: @memo.folder.id)
+  end
+
+  def destroy
+    memo = Memo.find(params[:id])
+    memo.destroy
+    redirect_to("/folders/#{@folder_id}/memos")
   end
 
   private
