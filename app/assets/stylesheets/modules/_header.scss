@@ -36,6 +36,7 @@
         overflow-y: scroll;
         .memo-search-result {
           &__title {
+            padding-left: 2px;
             color: white;
             background-color: red;
             font-size: 10px;
