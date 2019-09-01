@@ -6,7 +6,7 @@
     = f.text_field :name, class: 'memo-input-box', placeholder: '新しいメモ名を入力してください'
     = f.submit '作成', class: 'memo-save-btn'
   .memo-content
-    %table
+    %table.memo-table
       %tr
         %th
           = sortable "name", "メモ名"

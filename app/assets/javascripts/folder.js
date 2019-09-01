@@ -1,8 +1,13 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(folder){
-    var html = `<li class="folder-item">
-                  <a href=/folders/${folder.id}/memos>${folder.name}</a>
-                </li>`
+    var html = `<tr>
+                  <td>
+                    <a href=/folders/${folder.id}/memos>${folder.name}</a>
+                  </td>
+                  <td style="text-align:center">
+                    ー
+                  </td>
+                </tr>`
     return html;
   }
   $('.folder-save-form').on('submit', function(e){
@@ -19,7 +24,7 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.folder-list').append(html)
+      $('.folder-table').append(html);
     })
     .fail(function(){
       alert('error');

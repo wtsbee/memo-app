@@ -5,7 +5,7 @@
     = f.text_field :name, class: 'folder-input-box', placeholder: '新しいフォルダ名を入力してください'
     = f.submit '作成', class: 'folder-save-btn'
   .folder-content
-    %table
+    %table.folder-table
       %tr
         %th
           = sortable "name", "フォルダ名"
