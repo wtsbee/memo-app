@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: memo-app_production
-  username: memo-app
-  password: <%= ENV['MEMO-APP_DATABASE_PASSWORD'] %>
+  # database: memo-app_production
+  # username: memo-app
+  # password: <%= ENV['MEMO-APP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
