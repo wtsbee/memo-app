@@ -36,6 +36,12 @@ $(document).on('turbolinks:load', function() {
   });
 
   $(document).ready(function(){
+    var ascText = $(".current.asc").text();
+    var descText = $(".current.desc").text();
+    ascText = ascText.replace(" ▲", "");
+    descText = descText.replace(" ▼", "");
+    $(".current.asc").text(ascText);
+    $(".current.desc").text(descText);
     $(".current.asc").append(" ▲");
     $(".current.desc").append(" ▼");
   });
