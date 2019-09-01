@@ -84,7 +84,7 @@ class MemosController < ApplicationController
   end
 
   def set_memo
-    @memos = Memo.where(folder_id: params[:folder_id]).order("name ASC")
+    @memos = Memo.where(folder_id: params[:folder_id]).order(sort_column + ' ' + sort_direction)
   end
 
   def set_folder
@@ -97,6 +97,6 @@ class MemosController < ApplicationController
   end
 
   def sort_column
-      Folder.column_names.include?(params[:sort]) ? params[:sort] : "name"
+      Memo.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 end
