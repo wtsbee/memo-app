@@ -6,7 +6,7 @@ class MemosController < ApplicationController
 
   def index
     @memo = @memos.first
-    @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    @memos_2 = Memo.where(user_id: current_user.id).where('content LIKE(?)',"%#{params[:keyword]}%" )
     @memos_3 = []
     @memos_2.each do |memo|
       if Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,"").include?(params[:keyword].to_s) && params[:keyword] != "" && memo.content != ""
@@ -20,7 +20,7 @@ class MemosController < ApplicationController
   end
 
   def show
-    @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    @memos_2 = Memo.where(user_id: current_user.id).where('content LIKE(?)',"%#{params[:keyword]}%" )
     @memos_3 = []
     @memos_2.each do |memo|
       if Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,"").include?(params[:keyword].to_s) && params[:keyword] != "" && memo.content != ""
@@ -48,7 +48,7 @@ class MemosController < ApplicationController
   def edit
     @folder = Folder.find(@memo.folder_id)
     gon.content = @memo.content
-    @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    @memos_2 = Memo.where(user_id: current_user.id).where('content LIKE(?)',"%#{params[:keyword]}%" )
     @memos_3 = []
     @memos_2.each do |memo|
       if Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,"").include?(params[:keyword].to_s) && params[:keyword] != "" && memo.content != ""
@@ -74,7 +74,7 @@ class MemosController < ApplicationController
 
   private
   def memo_params
-    params.permit(:name).merge(folder_id: @folder_id)
+    params.permit(:name).merge(folder_id: @folder_id, user_id: current_user.id)
   end
 
   def memo_update_params

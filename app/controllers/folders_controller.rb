@@ -5,7 +5,7 @@ class FoldersController < ApplicationController
     # @folders = Folder.all.includes(:memos).order("name ASC")
     @folders = Folder.where(user_id: current_user.id).order(sort_column + ' ' + sort_direction)
     # @folders = Folder.all.includes(:memos).order(params[:sort])
-    @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
+    @memos_2 = Memo.where(user_id: current_user.id).where('content LIKE(?)',"%#{params[:keyword]}%" )
     @memos_3 = []
     @memos_2.each do |memo|
       if Sanitize.clean(memo.content).gsub(/\n|&nbsp;/,"").include?(params[:keyword].to_s) && params[:keyword] != "" && memo.content != ""
