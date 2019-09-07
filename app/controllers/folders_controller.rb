@@ -3,7 +3,7 @@ class FoldersController < ApplicationController
 
   def index
     # @folders = Folder.all.includes(:memos).order("name ASC")
-    @folders = Folder.order(sort_column + ' ' + sort_direction)
+    @folders = Folder.where(user_id: current_user.id).order(sort_column + ' ' + sort_direction)
     # @folders = Folder.all.includes(:memos).order(params[:sort])
     @memos_2 = Memo.where('content LIKE(?)',"%#{params[:keyword]}%" )
     @memos_3 = []
