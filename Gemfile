@@ -72,6 +72,7 @@ gem 'gon'
 gem 'gretel'
 gem 'font-awesome-sass'
 gem 'sanitize'
+gem 'fog-aws'
 
 group :production do
   gem 'pg'
