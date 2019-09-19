@@ -24,3 +24,5 @@ module MemoApp
     config.time_zone = 'Tokyo'
   end
 end
+
+config.assets.initialize_on_precompile = false
