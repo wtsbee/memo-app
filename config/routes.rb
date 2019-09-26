@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :folders, only: [:index, :create, :edit, :destroy] do
     resources :memos, only: [:index, :show, :create, :update, :edit, :destroy]
   end
+  mount Ckeditor::Engine => '/ckeditor'
 end
